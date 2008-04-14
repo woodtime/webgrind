@@ -1,0 +1,41 @@
+#summary Specification of the structure of the preprocessed files.
+==Preprocessed file format==
+Specification of the structure of the preprocessed files in EBNF(almost).
+
+Notes:
+Address numbers in the file refer to a byte-offset into the file.
+Count numbers indicate the number of the following elements that can be read
+Function numbers refer to a function numbered in the order they occur in the function_addresses list. Numbering starts from 0.
+Invocation numbers refer to an invocation of a function in the order they occur in the invocations list. Numbering starts from 0.
+
+===Version 4===
+{{{
+file_contents: version_number header_address function_count function_addresses functions sub_calls headers
+version_number: number
+header_address: number
+function_count: number
+function_addresses: {number}
+functions: {total_self_cost total_inclusive_self_cost total_call_cost invocation_count invocations file_name function_name}
+total_self_cost: number
+total_inclusive_self_cost: number
+total_call_cost: number
+invocation_count: number
+invocations: 
+file_name: string_newline
+function_name: string_newline
+sub_calls: self_cost inclusive_self_cost called_from subcall_count subcall_address
+self_cost: number
+inclusive_self_cost: number
+called_from: call_cost function invocation line_number
+call_cost: number
+function: number
+invocation: number
+line_number: number
+subcall_count: number
+subcall_address: number
+subcalls: {function invocation line_number call_cost}
+headers: {string_newline}
+string_newline: any string terminated by a newline character
+number: unsigned long (always 32 bit, little endian byte order)
+}}}
+
