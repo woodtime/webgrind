@@ -2,14 +2,15 @@
 ==Preprocessed file format==
 Specification of the structure of the preprocessed files in EBNF(almost).
 
-===Version 5===
+===Version 5 (introduced after webgrind 0.4)===
 Simpler than version 4. It does not contain the full tree structure of the execution, but is simpler to generate and contains the information needed for webgrind(as of version 0.5). As this format does not contain information for each invocation it requires much less space.
 
-*Notes:*
-* Address numbers refer to byte-offsets into the file.
-* Count numbers typically indicate the number of the following elements that can be read.
-* Function numbers refer to a function numbered in the order they occur in the function_addresses list. Numbering starts from 0.
+*Notes*
+ * Address numbers refer to byte-offsets into the file.
+ * Count numbers typically indicate the number of the following elements that can be read.
+ * Function numbers refer to a function numbered in the order they occur in the function_addresses list. Numbering starts from 0.
 
+*Format*
 {{{
 file_contents: version_number header_address function_count function_addresses functions headers
 version_number: number
@@ -34,15 +35,16 @@ string_newline: any string terminated by a newline character
 number: unsigned long (always 32 bit, little endian byte order)
 }}}
 
-===Version 4===
+===Version 4 (last used in webgrind 0.4)===
 Contains all information from the callgrind file. The tree structure of the trace is preserved and contains pointers so that it can be traversed top-down and bottom up.
 
-*Notes:*
-* Address numbers refer to byte-offsets into the file.
-* Count numbers typically indicate the number of the following elements that can be read.
-* Function numbers refer to a function numbered in the order they occur in the function_addresses list. Numbering starts from 0.
-* Invocation numbers refer to an invocation of a function in the order they occur in the invocations list. Numbering starts from 0.
+*Notes*
+ * Address numbers refer to byte-offsets into the file.
+ * Count numbers typically indicate the number of the following elements that can be read.
+ * Function numbers refer to a function numbered in the order they occur in the function_addresses list. Numbering starts from 0.
+ * Invocation numbers refer to an invocation of a function in the order they occur in the invocations list. Numbering starts from 0.
 
+*Format*
 {{{
 file_contents: version_number header_address function_count function_addresses functions subcalls headers
 version_number: number
@@ -71,4 +73,3 @@ headers: {string_newline}
 string_newline: any string terminated by a newline character
 number: unsigned long (always 32 bit, little endian byte order)
 }}}
-
