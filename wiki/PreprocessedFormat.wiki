@@ -8,33 +8,8 @@ Count numbers indicate the number of the following elements that can be read
 Function numbers refer to a function numbered in the order they occur in the function_addresses list. Numbering starts from 0.
 Invocation numbers refer to an invocation of a function in the order they occur in the invocations list. Numbering starts from 0.
 
-===Version 5(draft)===
-{{{
-file_contents: version_number header_address function_count function_addresses functions headers call_lists
-version_number: number
-header_address: number
-function_count: number
-function_addresses: {number}
-functions: {summed_self_cost summed_inclusive_cost summed_call_cost invocation_count call_list_address file_name function_name}
-summed_self_cost: number
-summed_inclusive_cost: number
-summed_call_cost: number
-invocation_count: number
-call_list_address: number
-file_name: string_newline
-function_name: string_newline
-headers: {string_newline}
-call_list: {called_from_count call_information}
-called_from_count: number
-call_information: {function_number line call_cost}
-function_number: number
-line: number
-call_cost: number
-string_newline: any string terminated by a newline character
-number: unsigned long (always 32 bit, little endian byte order)
-}}}
-
 ===Version 4===
+Contains all information from the callgrind file. The tree structure of the trace is preserved and contains pointers so that it can be traversed top-down and bottom up.   
 {{{
 file_contents: version_number header_address function_count function_addresses functions subcalls headers
 version_number: number
@@ -63,3 +38,31 @@ headers: {string_newline}
 string_newline: any string terminated by a newline character
 number: unsigned long (always 32 bit, little endian byte order)
 }}}
+
+
+===Version 5(draft)===
+Simpler than version 4. It does not contain the full tree structure of the execution. It is easier to generate this structure.
+
+{{{
+file_contents: version_number header_address function_count function_addresses functions headers call_lists
+version_number: number
+header_address: number
+function_count: number
+function_addresses: {number}
+functions: {summed_self_cost summed_inclusive_cost summed_call_cost invocation_count called_from_count call_information file_name function_name}
+summed_self_cost: number
+summed_inclusive_cost: number
+summed_call_cost: number
+invocation_count: number
+called_from_count: number
+call_information: {function_number line call_cost}
+function_number: number
+line: number
+call_cost: number
+file_name: string_newline
+function_name: string_newline
+headers: {string_newline}
+string_newline: any string terminated by a newline character
+number: unsigned long (always 32 bit, little endian byte order)
+}}}
+
