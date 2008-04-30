@@ -5,10 +5,10 @@
 To run webgrind you need a webserver with PHP 5 installed. Webgrind uses `json_encode` that is available from PHP 5.2 or as a PECL extension before that.
 
 = Installation =
-# Download webgrind.
-# Extract webgrind in a folder within your document root.
-# Set the `$xdebugOutputDir` and `$storageDir` variables in the `config.php` file.
-# Start using webgrind with your browser of choice.
+  # Download webgrind.
+  # Extract webgrind in a folder within your document root.
+  # Set the `$xdebugOutputDir` and `$storageDir` variables in the `config.php` file.
+  # Start using webgrind with your browser of choice.
 
 == Details ==
 `$xdebugOutputDir` should be set to the folder where xdebug outputs its profiles. (Default: `/tmp`)
