@@ -1,0 +1,12 @@
+#summary Changelog for webgrind.
+
+= Changelog =
+
+==0.6==
+  * Fixed: Webgrind does not work with php_short_tags = off (issue 4)
+  * Changed: Allow configuration of µsec or msec in output (issue 2)
+  * Changed: Wikipages added to release package
+  * Changed: Small UI adjustments
+
+==0.5==
+  * Initial release
