@@ -1,5 +1,13 @@
 #summary Changelog for webgrind.
 
+==0.8==
+  * New: Autodetecting profiler_output_name, profiler_output_dir and tmp file storage
+  * New: Document title shows profiled script invoke url
+  * New: List is sortable by function kind
+  * Changed: Improved design
+  * Changed: Improved display of syntax highlighted fileviewer
+  * Fixed: Fileviewer no longer break long lines
+
 ===0.71===
   * Fixed: Works with short open tags again
 
