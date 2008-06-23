@@ -7,10 +7,4 @@ To run webgrind you need a webserver with PHP 5 installed. Webgrind uses `json_e
 = Installation =
   # Download webgrind.
   # Extract webgrind in a folder within your document root.
-  # Set the `$xdebugOutputDir` and `$storageDir` variables in the `config.php` file.
-  # Make sure the `$xdebugOutputFormat` variable in `config.php` matches the format of the `xdebug.profiler_output_name` setting. The default matches the default of xdebug.
   # Start using webgrind with your browser of choice.
-
-== Details ==
-`$xdebugOutputDir` should be set to the folder where xdebug outputs its profiles. (Default: `/tmp`)
-`$storageDir` should be a folder where webgrind can write data-files. It should be writable by the user running webgrind usually the user running the web server. Since xdebug needs to be able to write to its output directory this folder will typically be writable by the web server and can therefore be used for `$storageDir` as well.
