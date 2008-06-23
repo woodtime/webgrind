@@ -1,5 +1,8 @@
 #summary Changelog for webgrind.
 
+==0.81==
+  * Fixed: Potential infinite loop. (issue 12)
+
 ==0.8==
   * New: Autodetecting profiler_output_name, profiler_output_dir and tmp file storage
   * New: Document title shows profiled script invoke url
