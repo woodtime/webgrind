@@ -1,5 +1,9 @@
 #summary Changelog for webgrind.
 
+==1.0==
+ * Added: Ability to click on functions listed in 'calls' and 'called from' info slides to fill details of said function (issue 29)
+ * Fixed: Changed default setting of $storageDir to empty string. This allows webgrind to use system defaults or user may override.
+
 ==0.9==
  * Fixed: Added default xdebug output dir for when xdebug is not loaded (issue 13)
  * Fixed: Javascript error (issue 16)
