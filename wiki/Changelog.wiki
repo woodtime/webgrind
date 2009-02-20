@@ -1,4 +1,5 @@
 #summary Changelog for webgrind.
+#labels Featured
 
 ==1.0==
  * Added: Ability to click on functions listed in 'calls' and 'called from' info slides to fill details of said function (issue 29)
