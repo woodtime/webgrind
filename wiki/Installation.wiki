@@ -23,6 +23,8 @@ Please refer to the Xdebug manual for further configuration settings: http://www
   # Extract webgrind to a folder accessible to the webserver.
   # Start using webgrind with your browser of choice by navigating to the URL of your webgrind install, e.g. http://localhost/webgrind.
 
+Installing webgrind on production servers is highly discouraged as it might allow access to sensitive files.
+
 = Configuration =
 Webgrind can be configured by editing the config.php file in the webgrind directory, but should work with default settings provided Xdebug is installed and configured correctly.
 
